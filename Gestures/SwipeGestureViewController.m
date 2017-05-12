@@ -33,7 +33,7 @@
     UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, bottomView.frame.size.width, bottomView.frame.size.height)];
     
     topView.backgroundColor = [UIColor whiteColor];
-    topView.userInteractionEnabled = YES;
+
     
     
     UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeGesture:)];

@@ -47,6 +47,44 @@
             </objects>
             <point key="canvasLocation" x="-156" y="-160"/>
         </scene>
+        <!--Edge Pan-->
+        <scene sceneID="X5A-K4-cXb">
+            <objects>
+                <viewController id="gwt-kf-xuR" customClass="ScreenEdgePanGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iXM-cz-IXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="hEJ-cy-YUf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="55p-EW-kdi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Edge Pan" image="item6" id="0Q1-TV-E1A"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ri-ye-aqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1646" y="1015"/>
+        </scene>
+        <!--Rotation-->
+        <scene sceneID="VPy-fc-Edn">
+            <objects>
+                <viewController id="a37-V2-sNT" customClass="RotationGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yQi-ii-6vB"/>
+                        <viewControllerLayoutGuide type="bottom" id="qmA-os-A2I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X21-ZX-oPE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1010196716" green="0.39531588629999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rotation" image="item5" id="nMg-lM-c26"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sP2-K7-gNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-839" y="1013"/>
+        </scene>
         <!--Swipe-->
         <scene sceneID="ICH-db-sqx">
             <objects>
@@ -115,6 +153,8 @@
                         <segue destination="K6D-xH-4gT" kind="relationship" relationship="viewControllers" id="QHx-dN-6sE"/>
                         <segue destination="aAJ-X4-qey" kind="relationship" relationship="viewControllers" id="5DM-wb-4RU"/>
                         <segue destination="3U1-px-0Kh" kind="relationship" relationship="viewControllers" id="OjY-SC-XQ2"/>
+                        <segue destination="a37-V2-sNT" kind="relationship" relationship="viewControllers" id="ZSm-3T-7Vh"/>
+                        <segue destination="gwt-kf-xuR" kind="relationship" relationship="viewControllers" id="1Vj-DK-PXC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K10-7h-6F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -127,5 +167,7 @@
         <image name="item2" width="30" height="28"/>
         <image name="item3" width="30" height="28"/>
         <image name="item4" width="30" height="30"/>
+        <image name="item5" width="30" height="30"/>
+        <image name="item6" width="30" height="30"/>
     </resources>
 </document>
