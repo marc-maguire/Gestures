@@ -16,22 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIView *tapSquare = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.view.bounds)-100/2, CGRectGetMidY(self.view.bounds)-100/2, 100, 100)];
+    tapSquare.backgroundColor = [UIColor purpleColor];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureRecognized:)];
+    [tapSquare addGestureRecognizer:tapGesture];
+    [self.view addSubview:tapSquare];
+    
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction)tapGestureRecognized:(UITapGestureRecognizer *)sender {
+    
+    sender.view.backgroundColor = [sender.view.backgroundColor isEqual:[UIColor purpleColor]] ? [UIColor orangeColor] : [UIColor purpleColor];
 }
-*/
 
 @end
