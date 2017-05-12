@@ -15,6 +15,7 @@
 		926E69681EC642EC00BD57C6 /* PanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E69671EC642EC00BD57C6 /* PanGestureViewController.m */; };
 		926E696B1EC6432000BD57C6 /* TapGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E696A1EC6432000BD57C6 /* TapGestureViewController.m */; };
 		926E696E1EC648BD00BD57C6 /* PinchGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E696D1EC648BD00BD57C6 /* PinchGestureViewController.m */; };
+		926E69711EC652D000BD57C6 /* SwipeGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E69701EC652D000BD57C6 /* SwipeGestureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		926E696A1EC6432000BD57C6 /* TapGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapGestureViewController.m; sourceTree = "<group>"; };
 		926E696C1EC648BD00BD57C6 /* PinchGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinchGestureViewController.h; sourceTree = "<group>"; };
 		926E696D1EC648BD00BD57C6 /* PinchGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinchGestureViewController.m; sourceTree = "<group>"; };
+		926E696F1EC652D000BD57C6 /* SwipeGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeGestureViewController.h; sourceTree = "<group>"; };
+		926E69701EC652D000BD57C6 /* SwipeGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeGestureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				926E696A1EC6432000BD57C6 /* TapGestureViewController.m */,
 				926E696C1EC648BD00BD57C6 /* PinchGestureViewController.h */,
 				926E696D1EC648BD00BD57C6 /* PinchGestureViewController.m */,
+				926E696F1EC652D000BD57C6 /* SwipeGestureViewController.h */,
+				926E69701EC652D000BD57C6 /* SwipeGestureViewController.m */,
 				926E695B1EC63BCC00BD57C6 /* Assets.xcassets */,
 				926E695D1EC63BCC00BD57C6 /* LaunchScreen.storyboard */,
 				926E69601EC63BCC00BD57C6 /* Info.plist */,
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				926E696E1EC648BD00BD57C6 /* PinchGestureViewController.m in Sources */,
+				926E69711EC652D000BD57C6 /* SwipeGestureViewController.m in Sources */,
 				926E696B1EC6432000BD57C6 /* TapGestureViewController.m in Sources */,
 				926E69541EC63BCC00BD57C6 /* AppDelegate.m in Sources */,
 				926E69681EC642EC00BD57C6 /* PanGestureViewController.m in Sources */,

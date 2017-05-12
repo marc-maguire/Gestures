@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97T-H4-RdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="36"/>
+            <point key="canvasLocation" x="-156" y="-830"/>
         </scene>
         <!--Pinch-->
         <scene sceneID="vnc-GK-zLG">
@@ -45,7 +45,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rgq-Gh-C2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-155" y="700"/>
+            <point key="canvasLocation" x="-156" y="-160"/>
+        </scene>
+        <!--Swipe-->
+        <scene sceneID="ICH-db-sqx">
+            <objects>
+                <viewController id="3U1-px-0Kh" customClass="SwipeGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bHQ-94-smB"/>
+                        <viewControllerLayoutGuide type="bottom" id="FAG-pa-Tvj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jl4-ec-1br">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Swipe" image="item4" id="IRL-qF-llC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xR9-sK-AXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="526"/>
         </scene>
         <!--Pan-->
         <scene sceneID="xz4-4n-PFX">
@@ -80,7 +99,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-158" y="-619"/>
+            <point key="canvasLocation" x="-156" y="-1502"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cns-hN-dZu">
@@ -95,6 +114,7 @@
                         <segue destination="vwk-fG-u09" kind="relationship" relationship="viewControllers" id="JbL-IC-t7t"/>
                         <segue destination="K6D-xH-4gT" kind="relationship" relationship="viewControllers" id="QHx-dN-6sE"/>
                         <segue destination="aAJ-X4-qey" kind="relationship" relationship="viewControllers" id="5DM-wb-4RU"/>
+                        <segue destination="3U1-px-0Kh" kind="relationship" relationship="viewControllers" id="OjY-SC-XQ2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K10-7h-6F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,5 +126,6 @@
         <image name="item1" width="30" height="30"/>
         <image name="item2" width="30" height="28"/>
         <image name="item3" width="30" height="28"/>
+        <image name="item4" width="30" height="30"/>
     </resources>
 </document>

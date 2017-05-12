@@ -23,8 +23,6 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureRecognized:)];
     [tapSquare addGestureRecognizer:tapGesture];
     [self.view addSubview:tapSquare];
-    
-
 
 }
 
