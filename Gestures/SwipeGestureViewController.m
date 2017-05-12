@@ -57,14 +57,35 @@
 //        CGPoint touchLocation = [sender locationInView:self.view];
         //learned that you cant direction change the origin.x value, you can do it in steps and then reassign.
         //sender.view.frame.origin.x = not assignable
-        CGRect newFrameX = sender.view.frame;
-        newFrameX.origin.x = sender.view.frame.origin.x - 100;
-        sender.view.frame = newFrameX;
+        //made below instant code and then added animation instead
+//        CGRect newFrameX = sender.view.frame;
+//        newFrameX.origin.x = sender.view.frame.origin.x - 100;
+//        sender.view.frame = newFrameX;
+        [UIView animateWithDuration:.7
+                         animations:^{
+                             //what you would like to animate
+                             sender.view.frame = CGRectMake(sender.view.frame.origin.x - 100,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height);
+                         }completion:^(BOOL finished){
+                             //do something when the animation finishes
+                         }];
+        
         
     } else {
-        CGRect newFrameX = sender.view.frame;
-        newFrameX.origin.x = sender.view.frame.origin.x + 100;
-        sender.view.frame = newFrameX;
+        //made below instant code and then added animation instead
+//        CGRect newFrameX = sender.view.frame;
+//        newFrameX.origin.x = sender.view.frame.origin.x + 100;
+//        sender.view.frame = newFrameX;
+        [UIView animateWithDuration:.7
+                         animations:^{
+                             //what you would like to animate
+                             sender.view.frame = CGRectMake(sender.view.frame.origin.x + 100,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height);
+                         }completion:^(BOOL finished){
+                             //do something when the animation finishes
+                         }];
+
+        
+        
+        
     }
     
 }
