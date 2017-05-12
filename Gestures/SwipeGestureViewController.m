@@ -64,9 +64,13 @@
         [UIView animateWithDuration:.7
                          animations:^{
                              //what you would like to animate
-                             sender.view.frame = CGRectMake(sender.view.frame.origin.x - 100,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height);
+                             sender.view.frame = CGRectMake(sender.view.frame.origin.x - 120,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height);
                          }completion:^(BOOL finished){
-                             //do something when the animation finishes
+                             [UIView animateWithDuration:.2
+                                              animations:^{
+                                                  
+                                                  sender.view.frame = CGRectMake(sender.view.frame.origin.x + 20,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height); }];
+                             
                          }];
         
         
@@ -78,14 +82,13 @@
         [UIView animateWithDuration:.7
                          animations:^{
                              //what you would like to animate
-                             sender.view.frame = CGRectMake(sender.view.frame.origin.x + 100,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height);
+                             sender.view.frame = CGRectMake(sender.view.frame.origin.x + 120,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height);
                          }completion:^(BOOL finished){
-                             //do something when the animation finishes
+                             [UIView animateWithDuration:.2
+                                              animations:^{
+                                                  
+                                                  sender.view.frame = CGRectMake(sender.view.frame.origin.x - 20,sender.view.frame.origin.y, sender.view.frame.size.width, sender.view.frame.size.height); }];
                          }];
-
-        
-        
-        
     }
     
 }
