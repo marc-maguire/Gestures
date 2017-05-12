@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R2G-k6-o5Y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Tap-->
         <scene sceneID="pe6-aT-yM5">
             <objects>
-                <viewController id="K6D-xH-4gT" sceneMemberID="viewController">
+                <viewController id="K6D-xH-4gT" customClass="TapGestureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6ED-Aa-IgA"/>
                         <viewControllerLayoutGuide type="bottom" id="oOX-qX-PqD"/>
@@ -20,7 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="V1t-EX-XtV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tap" image="item2" id="GNZ-H0-yaD"/>
                 </viewController>
@@ -31,7 +31,7 @@
         <!--Pan-->
         <scene sceneID="xz4-4n-PFX">
             <objects>
-                <viewController id="vwk-fG-u09" sceneMemberID="viewController">
+                <viewController id="vwk-fG-u09" customClass="PanGestureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iwn-Xx-WxP"/>
                         <viewControllerLayoutGuide type="bottom" id="Qyj-ZA-reh"/>
@@ -39,11 +39,27 @@
                     <view key="view" contentMode="scaleToFill" id="KvX-m1-bhf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-b6-oKG">
+                                <rect key="frame" x="137" y="226" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.14627527239999999" green="0.78010735539999998" blue="0.13751368659999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vNF-zW-8Uf" appends="YES" id="qgM-9M-7uP"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pan" image="item1" id="as9-eE-uRZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEN-ka-j7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vNF-zW-8Uf">
+                    <connections>
+                        <action selector="panGesture:" destination="vwk-fG-u09" id="Gn8-wv-3zP"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-158" y="-619"/>
         </scene>

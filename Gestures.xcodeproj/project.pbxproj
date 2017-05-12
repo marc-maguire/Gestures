@@ -12,6 +12,8 @@
 		926E695A1EC63BCC00BD57C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926E69581EC63BCC00BD57C6 /* Main.storyboard */; };
 		926E695C1EC63BCC00BD57C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 926E695B1EC63BCC00BD57C6 /* Assets.xcassets */; };
 		926E695F1EC63BCC00BD57C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926E695D1EC63BCC00BD57C6 /* LaunchScreen.storyboard */; };
+		926E69681EC642EC00BD57C6 /* PanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E69671EC642EC00BD57C6 /* PanGestureViewController.m */; };
+		926E696B1EC6432000BD57C6 /* TapGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926E696A1EC6432000BD57C6 /* TapGestureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,10 @@
 		926E695B1EC63BCC00BD57C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		926E695E1EC63BCC00BD57C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		926E69601EC63BCC00BD57C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926E69661EC642EC00BD57C6 /* PanGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGestureViewController.h; sourceTree = "<group>"; };
+		926E69671EC642EC00BD57C6 /* PanGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGestureViewController.m; sourceTree = "<group>"; };
+		926E69691EC6432000BD57C6 /* TapGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGestureViewController.h; sourceTree = "<group>"; };
+		926E696A1EC6432000BD57C6 /* TapGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapGestureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				926E69581EC63BCC00BD57C6 /* Main.storyboard */,
+				926E69661EC642EC00BD57C6 /* PanGestureViewController.h */,
+				926E69671EC642EC00BD57C6 /* PanGestureViewController.m */,
+				926E69691EC6432000BD57C6 /* TapGestureViewController.h */,
+				926E696A1EC6432000BD57C6 /* TapGestureViewController.m */,
 				926E695B1EC63BCC00BD57C6 /* Assets.xcassets */,
 				926E695D1EC63BCC00BD57C6 /* LaunchScreen.storyboard */,
 				926E69601EC63BCC00BD57C6 /* Info.plist */,
@@ -145,7 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926E696B1EC6432000BD57C6 /* TapGestureViewController.m in Sources */,
 				926E69541EC63BCC00BD57C6 /* AppDelegate.m in Sources */,
+				926E69681EC642EC00BD57C6 /* PanGestureViewController.m in Sources */,
 				926E69511EC63BCC00BD57C6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
