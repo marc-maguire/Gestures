@@ -8,7 +8,9 @@
 
 #import "ScreenEdgePanGestureViewController.h"
 
-@interface ScreenEdgePanGestureViewController ()
+@interface ScreenEdgePanGestureViewController () <UIGestureRecognizerDelegate>
+
+@property (nonatomic) BOOL viewIsShowing;
 
 @end
 
@@ -16,22 +18,62 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   //create a view (larger box this time, maybe 400 x 400) and set it up so that its x value is equal to the right edge of the superview -20 or so
+    //add it to the super view
+    //ib action to handle gestures that accepts a sender, you can check class of sender and create
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.view.bounds) + self.view.bounds.size.width/2-10,CGRectGetMidY(self.view.bounds)-self.view.bounds.size.width/2,self.view.frame.size.width/4*3, self.view.frame.size.height/2)];
+    view.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:view];
+    
+    UIScreenEdgePanGestureRecognizer *screenEdgeGesture = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(screenEdgePanGestureRecognizer:)];
+    
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureRecognizer)];
+    [view addGestureRecognizer:screenEdgeGesture];
+    [view addGestureRecognizer:panGestureRecognizer];
+    panGestureRecognizer.delegate = self;
+    screenEdgeGesture.delegate = self;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//- (BOOL) gestureRecognizer: (UIGestureRecognizer *) gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer *) otherGestureRecognizer {
+//    return NO;
+//}
+
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+//    
+//}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    // If the gesture recognizer is a UITapGestureRecongizer, but the other
+    // gesture detected is a UILongPressGestureRecognizer, require the
+    // UITapGestureRecognizer to fail.
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] &&
+        [otherGestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]] && self.viewIsShowing == NO) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+    
+    
+    
+
+
+
+
+
+
+- (IBAction)panGestureRecognizer:(UIPanGestureRecognizer *)sender {
+    NSLog(@"ready to pan");
+    //disable self enable other
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)screenEdgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)sender {
+    NSLog(@"ready to edge pan");
+    
+    
+    
 }
-*/
 
 @end
