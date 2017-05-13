@@ -18,6 +18,8 @@
 
 @implementation ScreenEdgePanGestureViewController
 
+//can this be refactored to handle checking in separate functions which take in an instance of the gesture sender as sender? then in each reognizer you pull out the logic
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    //create a view (larger box this time, maybe 400 x 400) and set it up so that its x value is equal to the right edge of the superview -20 or so
