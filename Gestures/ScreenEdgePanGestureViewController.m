@@ -32,7 +32,7 @@
     screenEdgeGesture.edges = UIRectEdgeRight;
     self.screenEdge = screenEdgeGesture;
     
-    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureRecognizer)];
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(screenEdgePanGestureRecognizer:)];
     self.pan = panGestureRecognizer;
     self.pan.enabled = NO;
     
@@ -58,41 +58,71 @@
     }
 }
 
-- (IBAction)screenEdgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)sender {
+- (IBAction)screenEdgePanGestureRecognizer:(UIGestureRecognizer *)sender {
     NSLog(@"ready to edge pan");
     CGRect newFrame = sender.view.frame;
     
-    if ([sender locationInView:self.view].x <= self.view.frame.size.width/3*2) {
-        self.screenEdge.enabled = NO;
-        newFrame.origin.x = self.view.frame.size.width/4*1;
-        [UIView animateWithDuration:.2 animations:^{
+    if (!self.viewIsShowing) {
+        if ([sender locationInView:self.view].x <= self.view.frame.size.width/3*2) {
+            self.screenEdge.enabled = NO;
+            newFrame.origin.x = self.view.frame.size.width/4*1;
+            [UIView animateWithDuration:.2 animations:^{
+                
+                sender.view.frame = newFrame;
+
+            }];
             
+                    self.pan.enabled = YES;
+            self.viewIsShowing = YES;
+        } else {
+        
+            newFrame.origin.x += [sender locationInView:sender.view].x;
+            //does the above act backwards because locationInView would be returning relative values?
             sender.view.frame = newFrame;
+            //if newframe.origin.x = self.view.size.whatever 1/4 of the screen is the end goal, 1/2 the screen is the threshold.
+            //need to do some sort of check for state of screenedge pan touch (ended?
+            
+            
+            NSLog(@"x value is:%f",[sender locationInView:self.view].x);
 
-        }];
-        
-                self.pan.enabled = YES;
+            
+        }
     } else {
-    
-        newFrame.origin.x += [sender locationInView:sender.view].x;
-        //does the above act backwards because locationInView would be returning relative values?
-        sender.view.frame = newFrame;
-        //if newframe.origin.x = self.view.size.whatever 1/4 of the screen is the end goal, 1/2 the screen is the threshold.
-        //need to do some sort of check for state of screenedge pan touch (ended?
         
-        
-        NSLog(@"x value is:%f",[sender locationInView:self.view].x);
-
-        
+        if ([sender locationInView:self.view].x >= self.view.frame.size.width/3*2) {
+            self.pan.enabled = NO;
+            newFrame.origin.x = CGRectGetMidX(self.view.bounds) + self.view.bounds.size.width/2-10;
+            
+                [UIView animateWithDuration:.2 animations:^{
+                
+                sender.view.frame = newFrame;
+                
+            }];
+            
+            self.screenEdge.enabled = YES;
+            self.viewIsShowing = NO;
+        } else {
+            
+            newFrame.origin.x += [sender locationInView:sender.view].x;
+            //does the above act backwards because locationInView would be returning relative values?
+            sender.view.frame = newFrame;
+            //if newframe.origin.x = self.view.size.whatever 1/4 of the screen is the end goal, 1/2 the screen is the threshold.
+            //need to do some sort of check for state of screenedge pan touch (ended?
+            
+            
+            NSLog(@"x value is:%f",[sender locationInView:self.view].x);
+            
+    }
     }
 }
 
-        
-        
-//        if (!self.viewIsShowing) {
+//- (void)screenEdgePan {
+//
 //    
 //    
-//    }
+//    
+//}
+    
     
 
 
