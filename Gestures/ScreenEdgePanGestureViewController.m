@@ -62,6 +62,7 @@
     NSLog(@"ready to edge pan");
     CGRect newFrame = sender.view.frame;
     
+    
     if (!self.viewIsShowing) {
         if ([sender locationInView:self.view].x <= self.view.frame.size.width/3*2) {
             self.screenEdge.enabled = NO;
@@ -79,6 +80,20 @@
             newFrame.origin.x += [sender locationInView:sender.view].x;
             //does the above act backwards because locationInView would be returning relative values?
             sender.view.frame = newFrame;
+            
+    
+            
+            if ((sender.state == UIGestureRecognizerStateEnded) && ([sender locationInView:self.view].x >= self.view.frame.size.width/3*2)) {
+                newFrame.origin.x = CGRectGetMidX(self.view.bounds) + self.view.bounds.size.width/2-10;
+                
+                [UIView animateWithDuration:.2 animations:^{
+                    
+                    sender.view.frame = newFrame;
+                    
+                }];
+
+                
+            }
             //if newframe.origin.x = self.view.size.whatever 1/4 of the screen is the end goal, 1/2 the screen is the threshold.
             //need to do some sort of check for state of screenedge pan touch (ended?
             
@@ -108,6 +123,19 @@
             sender.view.frame = newFrame;
             //if newframe.origin.x = self.view.size.whatever 1/4 of the screen is the end goal, 1/2 the screen is the threshold.
             //need to do some sort of check for state of screenedge pan touch (ended?
+            if ((sender.state == UIGestureRecognizerStateEnded) && ([sender locationInView:self.view].x <= self.view.frame.size.width/3*2)) {
+                newFrame.origin.x = self.view.frame.size.width/4*1;
+                
+                [UIView animateWithDuration:.2 animations:^{
+                    
+                    sender.view.frame = newFrame;
+                    
+                }];
+                
+                
+            }
+
+            
             
             
             NSLog(@"x value is:%f",[sender locationInView:self.view].x);
